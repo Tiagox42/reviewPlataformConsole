@@ -24,7 +24,8 @@ namespace reviewPlataformConsole.Entities.Media.MediaTypes
                  "\nComments:\n";
             foreach (Comment item in Comments)
             {
-               result += "\nID: " + item.Id + "\n";
+                result += "\nID: " + item.Id + "\n";
+                result += "MediaType: " + MediaType.Teste + "\n";
                 result += "Texto: " + item.Text + "\n";
             }
 

@@ -13,6 +13,7 @@ namespace reviewPlataformConsole.Entities.Media.Comments
         public Guid Id { get; set; }
         public User User { get; set; }
         public Guid Media { get; set; }
+        public int MediaType { get; set; }
         public string Text { get; set; }
         public string LastText { get; set; }
         public int Likes { get; set; }
@@ -25,7 +26,7 @@ namespace reviewPlataformConsole.Entities.Media.Comments
         public DateTime? UpdatedBy { get; set; }
         public DateTime? CreatedBy { get; set; }
 
-        public Comment(string text)
+        public Comment(string text, int mediatype)
         {
             Id = Guid.NewGuid();
             Text = text;
