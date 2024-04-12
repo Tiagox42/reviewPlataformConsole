@@ -5,6 +5,7 @@ using reviewPlataformConsole.Entities.Media.MediaTypes;
 
 Console.WriteLine("PLATAFORMA DE REVIEWS");
 Console.WriteLine("----- ----- ----- -----");
+List<TesteMedia> list = new List<TesteMedia>();
 Menu();
 
 
@@ -25,7 +26,7 @@ void Menu() {
         }
         else if (opcao == 2)
         {
-            CriaTesteMedia();
+            ExibirObjetos();
         }
         else if (opcao == 9)
         {
@@ -72,9 +73,25 @@ void CriaTesteMedia()
         }
     }
     TesteMedia objetoTesteMedia = new TesteMedia(developer, negativo, positivo, listaComentarios, title);
+    list.Add(objetoTesteMedia);
     Console.WriteLine("Objeto criado com sucesso!");
 
     Console.WriteLine("\n\n\n" + objetoTesteMedia);
     Menu();
 }
 
+void ExibirObjetos()
+{
+    if (list.Count == 0)
+    {
+        Console.WriteLine ("\nSem objetos criados no momento.");
+        Menu();
+    } else
+    {
+        foreach (TesteMedia item in list)
+        {
+            Console.WriteLine("\n\n\n" + item);
+        }
+        Menu();
+    }
+}
